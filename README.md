@@ -1,3 +1,3 @@
 ## Bash_Exercises
 
-This is my first repossitory :smile:
+This is my first repository :smile:
