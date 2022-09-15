@@ -73,18 +73,40 @@ grep -E ">" test.fa.5 | sed 's/PREDICTED://g' | cut -f 2-4 -d " "
 
 ### Question 14 
 Once this is done, how do you count the species names with their order of multiplicity (i.e. how many sequences belong to Mus musculus, how many to Homo sapiens, etc)?
-
+```
+grep -E ">" test.fa.5 | sed 's/PREDICTED://g' | cut -f 2-4 -d " " | sort | uniq -c
+```
 ### Question 15 
 Write a loop in Bash producing all the integers from 1 to 30, one per line?
+```
+for numbers in {1..30}; 
+do echo $numbers; 
+done
+```
 
 ### Question 16 
 Create at once 20 files called "trial1" to "trial20" and then rename appending the suffix ".data". Of course, don't issue 20 commands, but just one.
+```
+for p in {1..20}; 
+do touch trial$p; 
+mv trial$p trial$p.data; 
+done
+```
 
 ### Question 17 
 Try this with the command "expr 1 / 0", whose purpose is to calculate the integer result of 1 divided by 0. What happens? Why?
+```
+expr 1 / 0
+output : division by zero
+A computer cannot express infinite numbers.
+```
 
 ### Question 18 
 How can you separately redirect the standard output and the standard error streams into two separate files?
+```
+echo "my terminal" && expr 1 / 0 > stdout.txt 2> stderror.txt
+ouput: my terminal
+       expe: division by zero
 
 ### Question 19 
 Write a Bash script asking "What's your name?", then waiting for you (the user) to enter you name and press Enter, following what the program displays some text according to the following pattern: "Good morning/day/evening, your_name! It's now current_time on this lovely day of current_day." and it exits.
