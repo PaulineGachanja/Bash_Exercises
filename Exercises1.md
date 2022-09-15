@@ -43,7 +43,6 @@ How can you use the commandline (on whichever machine you are now, that is conne
 ```
 
 ```
-
 ### Question 9 
 How can you count the number of lines in this text file (test.fa)? How do you count the number of sequences?
 ```
@@ -60,7 +59,7 @@ grep '>' test.fa > identifier.txt
 How can you process the file you got from question 8 to replace all its uppercase "A" letters into lowercase "a" letters, leaving the rest untouched?
 ```
 sed 's/A/a/g' test.fa
-
+```
 ### Question 12 
 In one command, ask for the display of all identifier lines from the same file test.fa without wrapping the lines, i.e. by having all lines displayed on your screen effectively start with the character '>'.
 ```
