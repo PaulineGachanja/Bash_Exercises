@@ -41,7 +41,7 @@ echo "Hello, World!" > "universal greeting.txt"
 ### Question 8 
 How can you use the commandline (on whichever machine you are now, that is connected to the internet) to download directly the file you can see on https://github.com/Fnyasimi/my-first-repo/blob/main/directory1/test.fa ? Be careful, you need to get the raw text file itself, not the full HTML page presenting it.
 ```
-
+wget https://github.com/Fnyasimi/my-first-repo/blob/main/directory1/test.fa
 ```
 ### Question 9 
 How can you count the number of lines in this text file (test.fa)? How do you count the number of sequences?
@@ -63,10 +63,13 @@ sed 's/A/a/g' test.fa
 ### Question 12 
 In one command, ask for the display of all identifier lines from the same file test.fa without wrapping the lines, i.e. by having all lines displayed on your screen effectively start with the character '>'.
 ```
-
+grep "^>" test.fa or grep -F ">" test.fa
 ```
 ### Question 13 
 Can you write a very short script (possibly one single commandline) to extract from the same file the species names?
+```
+grep -E ">" test.fa.5 | sed 's/PREDICTED://g' | cut -f 2-4 -d " "
+```
 
 ### Question 14 
 Once this is done, how do you count the species names with their order of multiplicity (i.e. how many sequences belong to Mus musculus, how many to Homo sapiens, etc)?
